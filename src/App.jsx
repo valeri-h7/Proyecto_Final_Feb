@@ -4,7 +4,7 @@ import HomeScreen from './Screens/HomeScreen/HomeScreen'
 import ContactScreen from './Screens/ContactScreen/ContactScreen'
 import ErrorNotFoundScreen from './Screens/ErrorNotFoundScreen/ErrorNotFoundScreen'
 import { getContacts } from './services/contactsService'
-import ContactsContextProvider from './Context/ContactSContext'
+import ContactsContextProvider from './Context/ContactsContext'
 
 
 function App() {
