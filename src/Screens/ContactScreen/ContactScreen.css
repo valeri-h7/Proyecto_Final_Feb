@@ -1,0 +1,24 @@
+.contact-screen {
+  padding: 20px;
+}
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.sent {
+  text-align: right;
+  background-color: red;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.received {
+  text-align: left;
+  background-color: yellow;
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
