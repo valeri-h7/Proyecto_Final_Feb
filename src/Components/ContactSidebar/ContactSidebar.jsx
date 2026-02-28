@@ -9,13 +9,7 @@ export default function ContactSidebar() {
 
   return (
     <aside className="sidebar">
-      <h1>WhatsApp Business</h1>
-
-      <div className="buttons">
-        <button>Estados</button>
-        <button>Llamadas</button>
-        <button>Canales</button>
-      </div>
+      <h1>Chats</h1>
 
       <div className="chat-list">
         {contacts.map((contact) => {
