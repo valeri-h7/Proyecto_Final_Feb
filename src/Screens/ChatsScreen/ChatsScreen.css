@@ -5,48 +5,19 @@
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-.chats-screen{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color:blueviolet;
+/* Layout general tipo WhatsApp Web */
+.chats-screen {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.sidebar{
-    width: 250px;
-    background-color: green;
-    padding: 20px;
-    height: 100vh;
-}
-
-.buttons{
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.chat-list{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.chat-link{
-    text-decoration: none;
-}
-
-.chat-link:hover{
-  background-color: #128c7e;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.chat-empty{
+/* Parte derecha cuando no hay chat seleccionado */
+.chat-empty {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
 }
