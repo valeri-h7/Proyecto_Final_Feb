@@ -3,6 +3,7 @@ import { getContacts } from "../services/contactsService";
 
 export const ContactsContext = createContext({
   contacts: [],
+  setContactsState: () => {},
   favorite_name: ''
 });
 
@@ -12,7 +13,8 @@ const ContactsContextProvider = ({ children }) => {
 
   const provider_values = {
     contacts: contactsState,
-    favorite_name: 'pepe'
+    setContactsState,  // ✅ ahora se puede actualizar desde cualquier componente
+    favorite_name: ''
   };
 
   return (

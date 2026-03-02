@@ -11,7 +11,7 @@ export default function HomeScreen() {
     const timer = setTimeout(() => {
       setLoading(false);
       navigate("/chats");
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,17 +19,15 @@ export default function HomeScreen() {
     <div className="home-screen">
       {loading ? (
         <>
-          <img
-            src="/logo-wsp.png"
-            alt="WhatsApp Business Logo"
-            className="home-logo"
-          />
-          <p>Cargando...</p>
+        <div className="logo-wsp"><i class="bi bi-whatsapp"></i></div>
+          <h2>WhatsApp</h2>
           <div className="loading-bar">
-            <div className="progress"></div>
+            <div className="progress">
+            </div>
           </div>
         </>
       ) : null}
+      <span> 🔒Cifrado de extremo a extremo</span>
     </div>
   );
 }

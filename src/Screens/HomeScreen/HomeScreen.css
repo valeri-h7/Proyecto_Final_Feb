@@ -1,3 +1,10 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root{
+  --background-color: #F7F5F3;
+  --primary-color: #1DAA61;
+}
+
 *{
   margin: 0;
     padding: 0;
@@ -5,39 +12,47 @@
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
-.home-screen {
+.home-screen{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-color: violet;
-  color: white;
+  background-color: var(--background-color);
+  color: black;
 }
 
-.home-logo {
-  width: 150px;
-  margin-bottom: 20px;
-}
 
-.loading-bar {
+.loading-bar{
   width: 200px;
   height: 5px;
-  background-color: blue;
+  background-color: var(--primary-color);
   border-radius: 3px;
   overflow: hidden;
   margin-top: 20px;
 }
 
-.progress {
+.progress{
   width: 0%;
   height: 100%;
-  background-color: white;
-  animation: loading 3s linear forwards;
+  background-color: gainsboro;
+  animation: loading 2s linear forwards;
 }
 
-@keyframes loading {
+.logo-wsp{
+  font-size: 50px;
+  color: gainsboro;
+  padding: 20px 0;
+}
+
+.home-screen span{
+  padding: 15px 0;
+  color: gray;
+  font-size: 14px;
+}
+
+@keyframes loading{
   from { width: 0%; }
   to { width: 100%; }
 }
