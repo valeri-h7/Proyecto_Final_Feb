@@ -5,9 +5,9 @@ export const getContacts = () => [
     avatar: "https://www.pngkey.com/png/detail/201-2019866_icons-de-tony-stark-.png",
     messages: [
       { id: 1, text: "Necesito reparación inmediata de la Torre Stark.", send_by_me: false, created_at: "2012-05-27T09:15:00Z", is_read: true },
-      { id: 2, text: "Buenas tardes. ¿Daño estructural o superficial?", send_by_me: true, created_at: "2012-05-27T09:17:00Z", is_read: true },
+      { id: 2, text: "Buenas tardes. Daño estructural o superficial?", send_by_me: true, created_at: "2012-05-27T09:17:00Z", is_read: true },
       { id: 3, text: "Digamos... que hubo una invasión alienígena con portal interdimensional.", send_by_me: false, created_at: "2012-05-27T09:19:00Z", is_read: true },
-      { id: 4, text: "Okay.... ¿Incluye laboratorio y piso de energía?", send_by_me: true, created_at: "2012-05-27T09:21:00Z", is_read: true },
+      { id: 4, text: "Okay.... Incluye laboratorio y piso de energía?", send_by_me: true, created_at: "2012-05-27T09:21:00Z", is_read: true },
       { id: 5, text: "Sí, y ventanales blindados esta vez. Nada de sorpresas.", send_by_me: false, created_at: "2012-05-27T09:23:00Z", is_read: true },
       { id: 6, text: "Diagnóstico preliminar en 2 horas.", send_by_me: true, created_at: "2012-05-27T09:25:00Z", is_read: true }
     ]

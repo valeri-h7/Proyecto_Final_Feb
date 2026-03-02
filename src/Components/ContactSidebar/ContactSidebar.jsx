@@ -1,21 +1,28 @@
-import React, { useContext, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { ContactsContext } from "../../Context/ContactsContext"
-import "./ContactSidebar.css"
+import React, { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ContactsContext } from "../../Context/ContactsContext";
+import "./ContactSidebar.css";
 
 export default function ContactSidebar() {
   const { contacts } = useContext(ContactsContext);
   const location = useLocation();
   const [search, setSearch] = useState("");
 
-  const filteredContacts = contacts.filter((c) =>
-    c.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredContacts = contacts
+    .filter((c) =>
+      c.name.toLowerCase().includes(search.toLowerCase())
+    )
+    .sort((a, b) => {
+      const lastA = a.messages[a.messages.length - 1]?.created_at || 0;
+      const lastB = b.messages[b.messages.length - 1]?.created_at || 0;
+      return new Date(lastB) - new Date(lastA);
+    });
 
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
         <h1>Chats</h1>
+
         <div className="header-icons">
           <i className="bi bi-plus-circle-fill"></i>
           <i className="bi bi-three-dots-vertical"></i>
@@ -34,21 +41,28 @@ export default function ContactSidebar() {
 
       <div className="chat-list">
         {filteredContacts.map((contact) => {
-          const isActive = location.pathname === `/chats/${contact.id}`;
-          const lastMessageObj = contact.messages[contact.messages.length - 1];
+          const isActive =
+            location.pathname === `/chats/${contact.id}`;
+
+          const lastMessageObj =
+            contact.messages[contact.messages.length - 1];
+
           const lastMessageText = lastMessageObj?.text || "";
+
           const lastMessageTime = lastMessageObj
-            ? new Date(lastMessageObj.created_at).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              })
+            ? new Date(lastMessageObj.created_at).toLocaleTimeString(
+                [],
+                { hour: "2-digit", minute: "2-digit" }
+              )
             : "";
 
           return (
             <Link
               key={contact.id}
               to={`/chats/${contact.id}`}
-              className={`chat-link ${isActive ? "active" : ""}`}
+              className={`chat-link ${
+                isActive ? "active" : ""
+              }`}
             >
               <div className="chat-item">
                 <img
@@ -56,13 +70,22 @@ export default function ContactSidebar() {
                   alt={contact.name}
                   className="chat-avatar"
                 />
+
                 <div className="chat-text">
                   <div className="chat-top">
-                    <span className="chat-name">{contact.name}</span>
-                    <span className="chat-time">{lastMessageTime}</span>
+                    <span className="chat-name">
+                      {contact.name}
+                    </span>
+
+                    <span className="chat-time">
+                      {lastMessageTime}
+                    </span>
                   </div>
+
                   <div className="chat-bottom">
-                    <span className="chat-last">{lastMessageText}</span>
+                    <span className="chat-last">
+                      {lastMessageText}
+                    </span>
                   </div>
                 </div>
               </div>

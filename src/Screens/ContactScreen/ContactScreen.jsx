@@ -1,23 +1,51 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { ContactsContext } from "../../Context/ContactsContext";
-import "./ContactScreen.css";
+import React, { useContext, useEffect, useRef, useState } from "react"
+import { useParams, useNavigate } from "react-router-dom"
+import { ContactsContext } from "../../Context/ContactsContext"
+import "./ContactScreen.css"
 
 export default function ContactScreen() {
   const { contact_id } = useParams();
+  const navigate = useNavigate();
   const { contacts, setContactsState } = useContext(ContactsContext);
-
-  const contact = contacts.find(c => c.id === parseInt(contact_id));
 
   const [message, setMessage] = useState("");
   const messagesEndRef = useRef(null);
 
-  // Scroll automático al final
+
+  const contact = contacts.find(c => c.id === parseInt(contact_id));
+  if (!contact) return <p>El contacto seleccionado no existe</p>;
+
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [contact?.messages]);
+  }, [contact.messages]);
 
-  if (!contact) return <p>El contacto seleccionado no existe</p>;
+ 
+  const formatTime = (date) =>
+    new Date(date).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+
+  
+  useEffect(() => {
+    const updatedContacts = contacts.map(c =>
+      c.id === contact.id
+        ? {
+            ...c,
+            messages: c.messages.map(m => {
+              if (m.send_by_me && !m.status) return { ...m, status: "read" };
+              if (!m.send_by_me && !m.status) return { ...m, status: "delivered" };
+              return m;
+            }),
+          }
+        : c
+    );
+    setContactsState(updatedContacts);
+ 
+  }, []);
+
 
   const sendMessage = () => {
     if (!message.trim()) return;
@@ -27,7 +55,7 @@ export default function ContactScreen() {
       text: message,
       send_by_me: true,
       created_at: new Date().toISOString(),
-      is_read: true,
+      status: "sent",
     };
 
     setContactsState(prev =>
@@ -39,37 +67,89 @@ export default function ContactScreen() {
     );
 
     setMessage("");
+
+
+    setTimeout(() => {
+      setContactsState(prev =>
+        prev.map(c =>
+          c.id === contact.id
+            ? {
+                ...c,
+                messages: c.messages.map(m =>
+                  m.id === newMessage.id ? { ...m, status: "delivered" } : m
+                ),
+              }
+            : c
+        )
+      );
+    }, 500);
+
+
+    setTimeout(() => {
+      setContactsState(prev =>
+        prev.map(c =>
+          c.id === contact.id
+            ? {
+                ...c,
+                messages: c.messages.map(m =>
+                  m.id === newMessage.id ? { ...m, status: "read" } : m
+                ),
+              }
+            : c
+        )
+      );
+    }, 1500);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // evitar salto de línea
+      e.preventDefault();
       sendMessage();
     }
   };
 
   return (
     <div className="contact-screen">
+      
       <div className="chat-header">
-        <img
-          src={contact.avatar}
-          alt={contact.name}
-          className="chat-header-avatar"
-        />
-        <h2>{contact.name}</h2>
-        <i className="bi bi-telephone-fill"></i>
-        <i className="bi bi-search search-icon"></i>
+
+        <div className="chat-header-left">
+          <i className="bi bi-arrow-left-short back-button"onClick={() => navigate("/chats")}></i>
+          <img src={contact.avatar} alt={contact.name} className="chat-header-avatar" />
+          <h2>{contact.name}</h2>
+        </div>
+
+        <div className="chat-header-right">
+          <i className="bi bi-telephone-fill"></i>
+        <i className="bi bi-search"></i>
         <i className="bi bi-three-dots-vertical"></i>
-     </div>
+        </div>
+      </div>
+
 
       <div className="messages">
-        {contact.messages.map(msg => (
-          <p key={msg.id} className={msg.send_by_me ? "sent" : "received"}>
-            {msg.text}
-          </p>
-        ))}
+        {[...contact.messages]
+          .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+          .map(msg => (
+            <div key={msg.id} className={msg.send_by_me ? "sent" : "received"}>
+              <div className="messageText">{msg.text}</div>
+              <div className="messageFooter">
+                <span className="messageTime">{formatTime(msg.created_at)}</span>
+
+
+                {msg.send_by_me && (
+                  <>
+                    {msg.status === "sent" && <span>✔</span>}
+                    {msg.status === "delivered" && <span>✔✔</span>}
+                    {msg.status === "read" && <span className="read">✔✔</span>}
+                  </>
+                )}
+              </div>
+            </div>
+          ))}
         <div ref={messagesEndRef} />
       </div>
+
 
       <div className="chat-input">
         <input
@@ -77,7 +157,7 @@ export default function ContactScreen() {
           placeholder="Escribe un mensaje..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          onKeyDown={handleKeyDown} // Enter envía
+          onKeyDown={handleKeyDown}
         />
         <button type="button" onClick={sendMessage}>Enviar</button>
       </div>

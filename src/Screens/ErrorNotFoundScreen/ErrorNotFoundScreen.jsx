@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default function ErrorNotFoundScreen() {
   return (
-    <div>
-        <h1>Pagina no encontrada</h1>
-        <p>La pagina no existe o ha sido movida</p>
-        <link to="/">Volver al inicio</link>   
+    <div style={{ textAlign: 'center', padding: '50px' }}>
+      <h1>Página no encontrada</h1>
+      <p>La página no existe o ha sido movida</p>
+      <Link to="/">Volver al inicio</Link>
     </div>
   )
 }
