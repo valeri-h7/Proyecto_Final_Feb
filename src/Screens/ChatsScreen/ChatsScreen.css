@@ -81,7 +81,7 @@ header{
 .chats-screen{
   flex: 1;
   display: flex;
-  max-width: 700px;
+  max-width: 450px;
   min-width: 0;
   flex-direction:column;
   border-right:1px solid var(--line-color);
