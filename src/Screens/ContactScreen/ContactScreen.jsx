@@ -29,22 +29,23 @@ export default function ContactScreen() {
     });
 
   
-  useEffect(() => {
-    const updatedContacts = contacts.map(c =>
-      c.id === contact.id
-        ? {
-            ...c,
-            messages: c.messages.map(m => {
-              if (m.send_by_me && !m.status) return { ...m, status: "read" };
-              if (!m.send_by_me && !m.status) return { ...m, status: "delivered" };
-              return m;
-            }),
-          }
-        : c
-    );
-    setContactsState(updatedContacts);
- 
-  }, []);
+useEffect(() => {
+  const updatedContacts = contacts.map(c =>
+    c.id === contact.id
+      ? {
+          ...c,
+          messages: c.messages.map(m => {
+            if (m.send_by_me && !m.status) return { ...m, status: "read" };
+            if (!m.send_by_me && !m.status) return { ...m, status: "delivered" };
+            return m;
+          }),
+        }
+      : c
+  );
+
+  setContactsState(updatedContacts);
+
+}, [contact.id]);
 
 
   const sendMessage = () => {

@@ -13,7 +13,6 @@
 }
 
 
-
 .chats-screen-container{
   display:flex;
   flex-direction:column;
@@ -47,7 +46,6 @@ header{
 }
 
 /* Barra de iconos */
-
 .icon-bar{
   width:60px;
   display:flex;
@@ -79,23 +77,22 @@ header{
 }
 
 
-
 /* Lista de chats */
-
 .chats-screen{
-  width:100%;
-  max-width:430px;
-  display:flex;
+  flex: 1;
+  display: flex;
+  max-width: 700px;
+  min-width: 0;
   flex-direction:column;
   border-right:1px solid var(--line-color);
   background:white;
 }
 
 /* Pantalla vacia*/
-
 main{
   flex: 1;
   display: flex;
+  min-width: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -115,7 +112,7 @@ main{
   font-weight: normal;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .chat-empty span{
@@ -127,9 +124,9 @@ main{
 
 
 
-/* 786px */
+/* 790px */
 
-@media (max-width:768px){
+@media (max-width:790px){
 
 .screen{
   flex-direction:column;

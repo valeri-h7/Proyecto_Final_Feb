@@ -13,7 +13,7 @@ const ContactsContextProvider = ({ children }) => {
 
   const provider_values = {
     contacts: contactsState,
-    setContactsState,  // ✅ ahora se puede actualizar desde cualquier componente
+    setContactsState,
     favorite_name: ''
   };
 
