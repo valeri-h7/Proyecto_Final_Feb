@@ -14,6 +14,13 @@ import Multimedia from "./Screens/MultimediaScreen/MultimediaScreen";
 import Settings from "./Screens/SettingsScreen/SettingsScreen";
 import Profile from "./Screens/ProfileScreen/ProfileScreen";
 import CallsScreen from "./Screens/CallsScreen/CallsScreen";
+import StatusScreen from "./Screens/StatusScreen/StatusScreen";
+import CommunitiesScreen from "./Screens/CommunitiesScreen/CommunitiesScreen";
+import ToolsScreen from "./Screens/ToolsScreen/ToolsScreen";
+import SendcommentScreen from "./Screens/SendCommentScreen/SendCommentScreen";
+import MultimediaScreen from "./Screens/MultimediaScreen/MultimediaScreen";
+import SettingsScreen from "./Screens/SettingsScreen/SettingsScreen";
+import ProfileScreen from "./Screens/ProfileScreen/ProfileScreen";
 
 function App() {
   return (
@@ -36,21 +43,21 @@ function App() {
 
         <Route path="/calls" element={<CallsScreen />} />
 
-        <Route path="/status" element={<Status />} />
+        <Route path="/status" element={<StatusScreen />} />
 
-        <Route path="/communities" element={<Communities />} />
+        <Route path="/communities" element={<CommunitiesScreen />} />
 
-        <Route path="/tools" element={<Tools />} />
+        <Route path="/tools" element={<ToolsScreen />} />
 
         <Route path="/announcements" element={<AnnouncementsScreen />} />
 
-        <Route path="/send comment" element={<SendComment />} />
+        <Route path="/send comment" element={<SendcommentScreen />} />
 
-        <Route path="/multimedia" element={<Multimedia />} />
+        <Route path="/multimedia" element={<MultimediaScreen />} />
 
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/settings" element={<SettingsScreen />} />
 
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<ProfileScreen />} />
 
       <Route path="*" element={<ErrorNotFoundScreen />} />
     </Routes>
