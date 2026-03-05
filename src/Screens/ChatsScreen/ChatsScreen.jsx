@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, Link } from "react-router-dom";
 import ContactSidebar from "../../Components/ContactSidebar/ContactSidebar";
 import "./ChatsScreen.css";
 
@@ -22,19 +22,59 @@ export default function ChatsScreen() {
 
         <aside className="icon-bar">
           <div className="icon-bar-top">
-            <button><i className="bi bi-chat-left-text-fill"></i></button>
-            <button><i className="bi bi-telephone-fill"></i></button>
-            <button><i className="bi bi-emoji-laughing-fill"></i></button>
-            <button><i className="bi bi-people-fill"></i></button>
-            <button><i className="bi bi-house-door-fill"></i></button>
-            <button><i className="bi bi-megaphone-fill"></i></button>
+            
+            <Link to="/chats" className="bar-button">
+              <i className="bi bi-chat-left-text-fill"></i>
+              <span>Chats</span>
+            </Link>
+
+            <Link to="/calls" className="bar-button">
+              <i className="bi bi-telephone-fill"></i>
+              <span>Llamadas</span>
+            </Link>
+
+            <Link to="/status" className="bar-button">
+              <i className="bi bi-emoji-laughing-fill"></i>
+              <span>Estados</span>
+            </Link>
+
+            <Link to="/communities" className="bar-button">
+              <i className="bi bi-people-fill"></i>
+              <span>Comunidades</span>
+              </Link>
+
+            <Link to="/tools" className="bar-button">
+              <i className="bi bi-house-door-fill"></i>
+              <span>Herramientas</span>
+            </Link>
+
+            <Link to="/announcements" className="bar-button">
+              <i className="bi bi-megaphone-fill"></i>
+              <span>Anunciar en Facebook</span>
+            </Link>
           </div>
 
           <div className="icon-bar-bottom">
-            <button><i className="bi bi-pencil-square"></i></button>
-            <button><i className="bi bi-collection-fill"></i></button>
-            <button><i className="bi bi-gear-fill"></i></button>
-            <button><i className="bi bi-person-fill"></i></button>
+
+            <Link to="/send comment" className="bar-button">
+              <i className="bi bi-pencil-square"></i>
+              <span>Enviar Comentarios</span>
+            </Link>
+
+            <Link to="/multimedia" className="bar-button">
+              <i className="bi bi-collection-fill"></i>
+              <span>Multimedia</span>
+
+            </Link>
+            <Link to="/settings" className="bar-button">
+              <i className="bi bi-gear-fill"></i>
+              <span>Ajustes</span>
+            </Link>
+
+            <Link to="/profile" className="bar-button">
+              <i className="bi bi-person-fill"></i>
+              <span>Perfil</span>
+            </Link>
           </div>
         </aside>
 

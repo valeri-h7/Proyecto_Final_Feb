@@ -135,7 +135,7 @@
 /* Responsive */
 
 @media (max-width: 768px) {
-  .chat-header h2 { font-size: 15px; }
+  .chat-header h2 { font-size: 14px; }
   .sent, .received { max-width: 80%; font-size: 15px; }
 }
 
