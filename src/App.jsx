@@ -9,7 +9,7 @@ import CallsScreen from "./Screens/CallsScreen/CallsScreen";
 import StatusScreen from "./Screens/StatusScreen/StatusScreen";
 import CommunitiesScreen from "./Screens/CommunitiesScreen/CommunitiesScreen";
 import ToolsScreen from "./Screens/ToolsScreen/ToolsScreen";
-import SendcommentScreen from "./Screens/SendCommentScreen/SendCommentScreen";
+import SendcommentScreen from "./Screens/SendcommentScreen/SendcommentScreen";
 import MultimediaScreen from "./Screens/MultimediaScreen/MultimediaScreen";
 import SettingsScreen from "./Screens/SettingsScreen/SettingsScreen";
 import ProfileScreen from "./Screens/ProfileScreen/ProfileScreen";
