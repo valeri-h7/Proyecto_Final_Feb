@@ -1,0 +1,101 @@
+:root{
+  --principal-color:#FFFFFF;
+  --line-color:#DEDCDA;
+  --secundary-color:#F6F5F4;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter", Arial, Helvetica, sans-serif;
+}
+
+.calls-screen{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* header */
+.calls-header{
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.calls-header h2{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* lista */
+.calls-list{
+  flex: 1;
+  overflow-y: auto;
+}
+
+.call-item{
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.call-item:hover{
+  background: var(--secundary-color);
+}
+
+.call-avatar{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.call-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.call-name{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.call-name.missed{
+  color: red;
+}
+
+.call-details{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: gray;
+}
+
+.call-action i{
+  font-size: 18px;
+  color: #00a884;
+}
+
+/* botón llamada nueva*/
+.new-call{
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  border: none;
+  background: #00a884;
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+}
