@@ -1,0 +1,109 @@
+.status-screen{
+  background:white;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* header */
+.status-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  border-bottom:1px solid gainsboro;
+}
+
+.back-button{
+  background:none;
+  border:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* personas */
+.status-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.status-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  cursor:pointer;
+}
+
+.status-item:hover{
+  background: gainsboro;
+}
+
+.status-avatar{
+  width: 60px;
+  height: 60px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-right:12px;
+}
+
+.status-info span{
+  font-weight:600;
+}
+
+.status-info p{
+  font-size:13px;
+  color:gray;
+}
+
+/* estado */
+.status-viewer{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* barra */
+.progress-bar{
+  position:absolute;
+  top:20px;
+  width:90%;
+  height:3px;
+  background: white;
+}
+
+.progress-fill{
+  height:100%;
+  background: lawngreen;
+  animation:progress 2s linear forwards;
+}
+
+@keyframes progress{
+  from{width:0;}
+  to{width:100%;}
+}
+
+/* info  */
+.status-top{
+  position:absolute;
+  top:40px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+}
+
+.viewer-avatar{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+.status-image{
+  max-height:80vh;
+  border-radius:10px;
+}

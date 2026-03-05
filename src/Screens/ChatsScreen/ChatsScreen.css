@@ -182,11 +182,11 @@ main{
 .icon-bar-top,
 .icon-bar-bottom{
   flex-direction:row;
-  gap:25px;
+  gap:30px;
   }
 
 
-.icon-bar-bottom{
+.icon-bar-bottom, .icon-bar-bottom span{
   display:none;
   }
 

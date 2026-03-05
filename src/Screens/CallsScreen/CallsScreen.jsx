@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./CallsScreen.css";
 
 export default function CallsScreen() {
+
+  const navigate = useNavigate();
 
   const calls = [
     {
@@ -29,7 +32,7 @@ export default function CallsScreen() {
       video: true
     },
     {
-      id: 1,
+      id: 4,
       name: "Sofía - Cuadrilla Centro",
       avatar: "https://st5.depositphotos.com/22341038/68727/i/450/depositphotos_687271764-stock-photo-png-young-attractive-girl-isolated.jpg",
       type: "missed",
@@ -46,7 +49,11 @@ export default function CallsScreen() {
 
   return (
     <div className="calls-screen">
+
       <div className="calls-header">
+        <button className="back-button" onClick={() => navigate("/chats")}>
+          <i className="bi bi-arrow-left"></i>
+        </button>
         <h2>Llamadas</h2>
       </div>
 
