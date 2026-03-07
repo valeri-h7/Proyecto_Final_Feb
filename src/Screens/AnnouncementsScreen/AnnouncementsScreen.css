@@ -1,0 +1,40 @@
+.announcement-overlay{
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.announcement-card{
+  background: white;
+  width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.announcement-buttons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn{
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.continue-btn{
+  background: green;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}

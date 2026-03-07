@@ -4,15 +4,11 @@ import HomeScreen from "./Screens/HomeScreen/HomeScreen";
 import ChatsScreen from "./Screens/ChatsScreen/ChatsScreen";
 import ContactScreen from "./Screens/ContactScreen/ContactScreen";
 import ErrorNotFoundScreen from "./Screens/ErrorNotFoundScreen/ErrorNotFoundScreen";
-import AnnouncementsScreen from "./Screens/AnnouncementsScreen/AnnouncementsScreen";
 import CallsScreen from "./Screens/CallsScreen/CallsScreen";
 import StatusScreen from "./Screens/StatusScreen/StatusScreen";
 import CommunitiesScreen from "./Screens/CommunitiesScreen/CommunitiesScreen";
 import ToolsScreen from "./Screens/ToolsScreen/ToolsScreen";
-import SendcommentScreen from "./Screens/SendcommentScreen/SendcommentScreen";
-import MultimediaScreen from "./Screens/MultimediaScreen/MultimediaScreen";
-import SettingsScreen from "./Screens/SettingsScreen/SettingsScreen";
-import ProfileScreen from "./Screens/ProfileScreen/ProfileScreen";
+import AnnouncementsScreen from "./Screens/AnnouncementsScreen/AnnouncementsScreen";
 
 function App() {
   return (
@@ -43,13 +39,6 @@ function App() {
 
         <Route path="/announcements" element={<AnnouncementsScreen />} />
 
-        <Route path="/send comment" element={<SendcommentScreen />} />
-
-        <Route path="/multimedia" element={<MultimediaScreen />} />
-
-        <Route path="/settings" element={<SettingsScreen />} />
-
-        <Route path="/profile" element={<ProfileScreen />} />
 
       <Route path="*" element={<ErrorNotFoundScreen />} />
     </Routes>

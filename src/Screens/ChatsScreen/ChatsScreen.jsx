@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useLocation, Link } from "react-router-dom";
+import { Outlet, useLocation, Link, } from "react-router-dom";
 import ContactSidebar from "../../Components/ContactSidebar/ContactSidebar";
 import "./ChatsScreen.css";
 
@@ -7,6 +7,7 @@ export default function ChatsScreen() {
 
   const location = useLocation();
   const chatOpen = location.pathname !== "/chats";
+
 
   return (
     <div className={`chats-screen-container ${chatOpen ? "chat-open" : ""}`}>
@@ -56,7 +57,7 @@ export default function ChatsScreen() {
 
           <div className="icon-bar-bottom">
 
-            <Link to="/send comment" className="bar-button">
+            <Link to="/send-comment" className="bar-button">
               <i className="bi bi-pencil-square"></i>
               <span>Enviar Comentarios</span>
             </Link>
@@ -85,8 +86,8 @@ export default function ChatsScreen() {
         <main className="chat-panel">
           <Outlet />
         </main>
-
       </div>
+
     </div>
   );
 }
