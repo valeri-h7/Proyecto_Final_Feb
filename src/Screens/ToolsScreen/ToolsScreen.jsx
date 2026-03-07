@@ -41,6 +41,19 @@ export default function ToolsScreen() {
           </div>
         </div>
 
+        <div className="tool-item-side">
+          <i className="bi bi-tag-fill"></i>
+          <div>
+            <h4>Etiquetas</h4>
+            <p>Administra etiquetas para organizar tu empresa.</p>
+          </div>
+        </div>
+
+         <div className="quick-reply-side">
+          <h4>Respuestas rápidas</h4>
+          <input type="text" className="quick-input-side" defaultValue="¡Muchas gracias por preferirnos! Esperamos poder servirte nuevamente."/>
+        </div>
+
       </aside>
       <main className="tools-right">
 

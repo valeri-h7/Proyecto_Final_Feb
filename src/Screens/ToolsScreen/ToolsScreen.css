@@ -42,6 +42,14 @@
   font-size:22px;
 }
 
+.tool-item-side{
+  display:none;
+}
+
+.quick-reply-side{
+  display:none;
+}
+
 /*Pantalla derecha*/
 .tools-right{
   width:65%;
@@ -93,4 +101,46 @@
   font-size:14px;
 }
 
-  
+  /*650px*/
+@media (max-width:650px){
+.labels-section{
+  display: none;
+}
+
+.quick-reply{
+  display: none;
+}
+
+.tools-left{
+  width:80%;
+}
+
+.tools-right{
+  width: 20%;
+}
+
+.tool-item-side{
+  display:flex;
+  gap:15px;
+  padding:20px;
+  cursor:pointer;
+}
+
+.tool-item-side i{
+  font-size:22px;
+}
+
+.quick-reply-side{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:0 20px;
+}
+
+.quick-input-side{
+  border:1px solid gainsboro;
+  height:auto;
+  padding:10px;
+}
+
+}
