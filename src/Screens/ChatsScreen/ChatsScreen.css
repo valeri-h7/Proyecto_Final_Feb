@@ -159,6 +159,7 @@ main{
 .chat-panel{
   width:100%;
   flex:1;
+  padding-bottom:80px;
   }
 
 .icon-bar{
@@ -185,12 +186,12 @@ main{
   padding: 0 19px;
   }
 
-.chat-panel{
+.chat-open .chats-screen{
   display:none;
   }
 
-.chat-open .chats-screen{
-  display:none;
+.chat-open .chat-panel{
+  display:flex;
   }
 
 }

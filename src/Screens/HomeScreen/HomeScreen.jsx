@@ -19,7 +19,7 @@ export default function HomeScreen() {
     <div className="home-screen">
       {loading ? (
         <>
-        <div className="logo-wsp"><i class="bi bi-whatsapp"></i></div>
+        <div className="logo-wsp"><i className="bi bi-whatsapp"></i></div>
           <h2>WhatsApp</h2>
           <div className="loading-bar">
             <div className="progress">
